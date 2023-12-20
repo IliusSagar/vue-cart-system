@@ -10,3 +10,10 @@ code formatting: Yes
   npm run format
   npm run dev
 -------------------------------------------------------
+** App.vue**
+** index.js**
+** assets/main.css**
+** views/Catalog.vue**
+** stores/counter.js**
+** assets/styles.css**
+

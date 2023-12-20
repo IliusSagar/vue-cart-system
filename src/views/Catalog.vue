@@ -9,3 +9,16 @@ export default defineComponent({
   name: 'CatalogView'
 })
 </script>
+
+<script setup>
+import { onMounted } from 'vue'
+import { productsStore } from '../stores/products'
+
+const productStore = productsStore()
+
+onMounted(() => {
+  console.log('Mounted >>>>>>>')
+
+  productStore.fetchProductsFromDB()
+})
+</script>
