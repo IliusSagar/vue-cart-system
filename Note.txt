@@ -1,0 +1,12 @@
+npm create vue@latest
+Project Name: vue-cart-system
+Router: Yes
+Pinia: Yes
+code quality: Yes
+code formatting: Yes
+  cd vue-cart-system
+  npm install
+  code .
+  npm run format
+  npm run dev
+-------------------------------------------------------
