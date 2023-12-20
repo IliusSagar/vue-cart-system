@@ -14,6 +14,6 @@ code formatting: Yes
 ** index.js**
 ** assets/main.css**
 ** views/Catalog.vue**
-** stores/counter.js**
+** stores/products.js**
 ** assets/styles.css**
 
