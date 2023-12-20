@@ -1,6 +1,11 @@
 <template>
   <div class="products-list">
-    <div class="product" v-for="product in store.products" :key="product.id">
+    <div
+      class="product"
+      v-for="product in store.products"
+      :key="product.id"
+      @click="goToProductPage(product.id)"
+    >
       <img :src="product.thumbnail" alt="" />
       <h2>Brand: {{ product.brand }}</h2>
       <h2>Description: {{ product.description }}</h2>
@@ -20,13 +25,19 @@ export default defineComponent({
 <script setup>
 import { onMounted } from 'vue'
 import { productsStore } from '../stores/products'
+import { useRouter } from 'vue-router'
 
 const store = productsStore()
+const router = useRouter()
+
+const goToProductPage = (id) => {
+  router.push({ name: 'ProductView', params: { id } })
+}
 
 onMounted(async () => {
-  store.fetchProductsFromDB()
+  await store.fetchProductsFromDB()
 
-  console.log('Mounted >>>>>>>', store.products)
+  //   console.log('Mounted >>>>>>>', store.products)
 })
 </script>
 

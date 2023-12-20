@@ -11,9 +11,10 @@ code formatting: Yes
   npm run dev
 -------------------------------------------------------
 ** App.vue**
-** index.js**
+** router/index.js**
 ** assets/main.css**
 ** views/Catalog.vue**
 ** stores/products.js**
 ** assets/styles.css**
+** views/ProductDetail.vue**
 
