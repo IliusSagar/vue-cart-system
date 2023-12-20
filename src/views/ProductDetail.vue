@@ -1,4 +1,5 @@
 <template>
+  <button @click="router.push({ name: 'Catalog' })">Back to catalog</button>
   <div class="product">
     <div class="product-image">
       <img :src="selectedProduct.thumbnail" alt="" />
@@ -6,7 +7,8 @@
     <div class="product-details">
       <p>Brand: {{ selectedProduct.brand }}</p>
       <p>Description: {{ selectedProduct.description }}</p>
-      <p>Price: {{ selectedProduct.price }}</p>
+      <h2>Price: {{ selectedProduct.price }}</h2>
+      <button @click="addToCart">Add to cart</button>
     </div>
   </div>
 </template>
@@ -20,16 +22,23 @@ export default defineComponent({
 </script>
 
 <script setup>
-import { productsStore } from '@/stores/products'
+// import { productsStore } from '@/stores/products'
+import { productsStore } from '../stores/products'
 import { computed } from 'vue'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 
 const store = productsStore()
+const router = useRouter()
 const route = useRoute()
 
 const selectedProduct = computed(() => {
   return store.products.find((item) => item.id === Number(route.params.id))
 })
+
+const addToCart = () => {
+  // console.log('test')
+  router.push({ name: 'CartView' })
+}
 </script>
 
 <style scoped>

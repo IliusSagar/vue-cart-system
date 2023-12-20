@@ -17,4 +17,8 @@ code formatting: Yes
 ** stores/products.js**
 ** assets/styles.css**
 ** views/ProductDetail.vue**
+** views/Cart.vue**
+
+
+------------------------------------------------------
 
