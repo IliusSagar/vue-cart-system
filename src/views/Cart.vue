@@ -1,7 +1,7 @@
 <template>
+  <button @click="router.push({ name: 'Catalog' })">Back to catalog</button>
   <div v-if="!store.cart.length" style="text-align: center">
     <h1>Empty Cart...</h1>
-    <button @click="router.push({ name: 'Catalog' })">Back to catalog</button>
   </div>
 
   <div class="cart-items" v-else>
@@ -11,6 +11,7 @@
         <span>Brand: {{ item.brand }}</span>
         <span>Category: {{ item.category }}</span>
         <span>Price: {{ item.price }}</span>
+        <button @click="removeFromCart(item.id)">Remove</button>
       </div>
     </div>
   </div>
@@ -31,6 +32,10 @@ import { useRouter } from 'vue-router'
 const router = useRouter()
 
 const store = productsStore()
+
+const removeFromCart = (id) => {
+  store.removeFromCart(id)
+}
 </script>
 
 <style scoped>
